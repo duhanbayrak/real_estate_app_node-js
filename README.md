@@ -1,4 +1,3 @@
-# real_estate_app_node-js
 
 <h1>Real Estate App</h1>
 
