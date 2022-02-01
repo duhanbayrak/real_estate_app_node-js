@@ -1,0 +1,53 @@
+<%- include('../partials/head') %>
+<%- include('../partials/adminPanelDefault') %>
+
+<style>
+    .container{
+        position: absolute;
+        top: 0;
+        right: 0;
+        
+    }
+    .form-group{
+        margin-top: 10px;
+    }
+</style>
+<div class="container col-lg-9">
+    <div class="card" style="font-family: 'Montserrat', sans-serif;">
+
+      <div class="card-body">
+        <div class="card-title"><h3>Yeni Temsilci Ekle</h3></div>
+        <hr>
+        <form action="/editAgent/<%= agents._id %> " method="post" enctype="multipart/form-data">
+          <div class="form-group">
+            <label for="firstName">İsim</label>
+            <input type="text" class="form-control" placeholder="İsim" name="firstName" value="<%= agents.firstName%>">
+          </div>
+          <div class="form-group">
+            <label for="lastName">Soyisim</label>
+            <input type="text" class="form-control" placeholder="Soyisim" name="lastName" value="<%= agents.lastName%>">
+          </div>
+          <div class="form-group">
+            <label for="phone">Telefon</label>
+            <input type="tel" class="form-control" placeholder="Telefon" name="phone" value="<%= agents.phone%>">
+          </div>
+          <div class="form-group">
+            <label for="email">E-Mail</label>
+            <input type="email" class="form-control" placeholder="E-Mail" name="email" value="<%= agents.email%>">
+          </div>
+          <div class="form-group mt-2">
+            <label for="agentImage">Fotoğraf Seç:</label>
+            <input type="file" class="form-control" id="agentImage" name="agentImage" accept="image/*" required>
+        </div>
+          <div class="form-group">
+            <label for="about" >Hakkında</label>
+            <textarea class="form-control" name="about" id="about" cols="30" rows="7"><%= agents.about%></textarea>
+          </div>
+          
+          
+          <button type="submit" class="btn btn-success btn-lg mt-4" style="float: right;">Ekle</button>
+        </form>
+      </div>
+    </div>
+  </div>
+<%- include('../partials/adminPanelFooter') %>

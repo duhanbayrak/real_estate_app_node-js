@@ -1,0 +1,91 @@
+<style>
+    .contact {
+        width: 500px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+    }
+
+    .contact span {
+        color: white;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 0.8rem;
+    }
+
+    .head-container {
+        padding: 10px;
+        background-color: #2C394B;
+        display: flex;
+        align-items: center;
+        justify-content: space-between !important;
+    }
+
+    .links {
+        position: relative;
+        left: 50px;
+    }
+
+    @media screen and (max-width: 992px) {
+        .links {
+            left: 0;
+            top: 0;
+        }
+
+        #mainNav #navbarResponsive {
+            background-color: #2C394B;
+        }
+
+        #mainNav #navbarResponsive ul li a {
+            color: tomato !important;
+            padding-left: 10px;
+        }
+    }
+</style>
+<header>
+    <div class="row head-container">
+
+        <div class="links col-lg-4 my-3 my-lg-0">
+            <a class="btn btn-dark btn-social mx-2" href="<%= contact.instagram %>"><i class="fab fa-instagram"></i></a>
+            <a class="btn btn-dark btn-social mx-2" href="<%= contact.twitter %>"><i class="fab fa-twitter"></i></a>
+            <a class="btn btn-dark btn-social mx-2" href="<%= contact.facebook %>"><i class="fab fa-facebook-f"></i></a>
+            <a class="btn btn-dark btn-social mx-2" href="<%= contact.linkedin %>"><i
+                    class="fab fa-linkedin-in"></i></a>
+        </div>
+        <div class="contact col-lg-4 text-lg-end">
+            <a class=" link-dark text-decoration-none me-3" href="#!"><i style="color: white;" class="fas fa-phone"></i>
+                <span>
+                    <%= contact.tel %>
+                </span>
+            </a>
+            <a class="link-dark text-decoration-none" href="#!"><i style="color: white;" class="fas fa-envelope"></i>
+                <span>
+                    <%= contact.mail %>
+                </span>
+            </a>
+        </div>
+    </div>
+
+
+</header>
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div class="container nav-container">
+        <a class="navbar-brand" href="/">REAL ESTATE</a>
+        <button class="navbar-toggler bg-dark" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+            aria-label="Toggle navigation">
+            Menu
+            <i class="fas fa-bars ms-1"></i>
+        </button>
+        <div class="collapse navbar-collapse " id="navbarResponsive">
+            <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                <li class="nav-item"><a class="nav-link" href="/">ANASAYFA</a></li>
+                <li class="nav-item"><a class="nav-link" href="/allAds">TÜM İLANLAR</a></li>
+                <li class="nav-item"><a class="nav-link" href="/about">HAKKIMIZDA</a></li>
+                <li class="nav-item"><a class="nav-link" href="/team">EKİBİMİZ</a></li>
+                <li class="nav-item"><a class="nav-link" href="/contact">İLETİŞİM</a></li>
+
+            </ul>
+        </div>
+    </div>
+</nav>

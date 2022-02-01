@@ -1,0 +1,173 @@
+<%- include('../partials/head') %>
+<%- include('../partials/adminPanelDefault') %>
+<style>
+     .container{
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  @media screen and (max-width: 992px) {
+    .container{
+    position: relative;
+    
+  }
+  }
+</style>
+
+    <form action="/ilanEkle" method="POST" enctype="multipart/form-data">
+        <div class="container px-4 col-lg-9">
+
+            <div class="row gx-5">
+                <div class="col">
+                    <div class="p-3">
+                        <div class="form-group">
+                           
+                            <label for="fiyat">Fiyat</label>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" id="fiyat" placeholder="200.000" name="fiyat">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text bg-light">₺</span>
+                                  </div>
+                              </div>
+                        </div>
+
+                        <div class="form-group mt-2">
+                            <label for="ilan_baslik">Başlık</label>
+                            <input type="text" class="form-control" id="ilan_baslik" placeholder="İlan Başlık"
+                                name="ilan_baslik">
+                        </div>
+
+
+                        <div class="form-group mt-2">
+                            <label for="il">İl</label>
+                            <input type="text" class="form-control" id="il" placeholder="İl" name="il">
+                        </div>
+                        <div class="form-group mt-2">
+                            <label for="ilce">İlçe</label>
+                            <input type="text" class="form-control" id="ilce" placeholder="İlçe" name="ilce">
+                        </div>
+                        <div class="form-group mt-2">
+                            <label for="ilan_no">İlan No</label>
+                            <input type="text" class="form-control" id="ilan_no" placeholder="İlan No" name="ilan_no">
+                        </div>
+                        <div class="form-group mt-2">
+                            <label for="ilan_tarihi">İlan Tarihi</label> 
+                            
+                           
+                            <input type="date" class="form-control" id="ilan_tarihi" name="ilan_tarihi">
+                        </div>
+                        <div class="form-group mt-2">
+                            <label for="alan_brut">Alan Brüt</label>
+                            <input type="number" class="form-control" id="alan_brut" placeholder="Alan Brüt"
+                                name="alan_brut">
+                        </div>
+                        <div class="form-group mt-2">
+                            <label for="alan_net">Alan Net</label>
+                            <input type="number" class="form-control" id="alan_net" placeholder="Alan Net"
+                                name="alan_net">
+                        </div>
+                        <div class="form-group mt-2">
+                            <label for="oda_sayisi">Oda Sayısı</label>
+                            <select class="form-control form-select" id="oda_sayisi" name="oda_sayisi">
+                                <option value="1+1">1+1</option>
+                                <option value="2+1">2+1</option>
+                                <option value="3+1">3+1</option>
+                                <option value="4+1">4+1</option>
+                                <option value="5+1">5+1</option>
+                            </select>
+                        </div>
+                        <div class="form-group mt-2">
+                            <label for="bina_yasi">Bina Yaşı</label>
+                            <input type="number" class="form-control" id="bina_yasi" placeholder="Bina Yaşı"
+                                name="bina_yasi">
+                        </div>
+                        <div class="form-group mt-2">
+                            <label for="bulundugu_kat">Bulunduğu Kat</label>
+                            <input type="number" class="form-control" id="bulundugu_kat" placeholder="Bulunduğu Kat"
+                                name="bulundugu_kat">
+                        </div>
+                        
+
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="p-3  ">
+                        
+                        <div class="form-group mt-2">
+                            <label for="kat_sayisi">Kat Sayısı</label>
+                            <input type="number" class="form-control" id="kat_sayisi" placeholder="Kat Sayısı"
+                                name="kat_sayisi">
+                        </div>
+                        <div class="form-group mt-2">
+                            <label for="isitma">Isıtma</label>
+                            <input type="text" class="form-control" id="isitma" placeholder="Isıtma" name="isitma">
+                        </div>
+                        <div class="form-group mt-2">
+                            <label for="banyo_sayisi">Banyo Sayısı</label>
+                            <input type="number" class="form-control" id="banyo_sayisi" placeholder="Banyo Sayısı"
+                                name="banyo_sayisi">
+                        </div>
+                        <div class="form-group mt-2">
+                            <label for="balkon">Balkon</label>
+                            <select class="form-control" id="balkon" name="balkon">
+                                <option value="Var">Var</option>
+                                <option value="Yok">Yok</option>
+
+                            </select>
+                        </div>
+                        <div class="form-group mt-2">
+                            <label for="balkon">Eşyalı</label>
+                            <select class="form-control form-select" id="esyali" name="esyali">
+                                <option value="Evet">Evet</option>
+                                <option value="Hayır">Hayır</option>
+                            </select>
+                        </div>
+                        <div class="form-group mt-2">
+                            <label for="emlakTuru">Emlak Türü</label>
+                            <select class="form-select" aria-label="Default select example" name="emlakTuru">
+                                <option selected>Emlak Türü</option>
+                                <option value="Daire">Daire</option>
+                                <option value="Ofis">Ofis</option>
+                                <option value="Arsa">Arsa</option>
+                                <option value="Müstakil">Müstakil</option>
+                                <option value="İş Yeri">İş Yeri</option>
+                            </select>
+
+                        </div>
+                        <div class="form-group mt-2">
+                            <label for="durum">Durum</label>
+                            <select class="form-control form-select" id="durum" name="durum">
+                                <option value="Kiralık">Kiralık</option>
+                                <option value="Satılık">Satılık</option>
+                                <option value="Arsa">Arsa</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group mt-2">
+                            <label for="image">Dosyaları Seç:</label>
+                            <input type="file" class="form-control" id="image" name="image" accept="image/*" multiple>
+                        </div>
+                        <div class="form-group mt-2">
+                            <label for="ilan_aciklama">Açıklama</label>
+                            <textarea class="form-control" id="ilan_aciklama" rows="4"
+                                name="ilan_aciklama"></textarea><br>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-success btn-lg">Ekle</button>
+                        </div>
+                    </div>
+                </div>
+                
+
+            </div>
+        </div>
+    </form>
+
+
+
+
+
+
+
+
+    <%- include('../partials/adminPanelFooter') %>

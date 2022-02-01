@@ -1,0 +1,47 @@
+<%- include('../partials/head') %>
+    <%- include('../partials/adminPanelDefault') %>
+
+        <style>
+            .container {
+                position: absolute;
+                top: 20px;
+                right: 20%;
+            }
+
+            @media screen and (max-width: 992px) {
+                .container {
+                    position: relative;
+                    right: 0;
+                }
+            }
+        </style>
+
+
+        <div class="container col-lg-6 bg-light">
+            <br>
+            <h2 style="text-align: center;">Hakkında Kısmını Düzenle</h2>
+            <br>
+            <form action="/aboutText" method="post">
+
+                <div class="form-group">
+                    <textarea name="aboutText" id="aboutText"><%= aboutText.aboutText %> </textarea>
+                </div><br>
+
+
+                <br><br>
+                <button type="submit" id="myButton" class="btn btn-outline-success"><i class="fas fa-plus"></i> Ekle </button>
+                <a href="/admin" class="btn btn-secondary"><i class="fas fa-times"></i> İptal</a>
+                <br><br>
+            </form>
+
+        </div>
+
+
+
+
+        <script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
+        <script>
+            CKEDITOR.replace('aboutText');
+
+        </script>
+        <%- include('../partials/adminPanelFooter') %>

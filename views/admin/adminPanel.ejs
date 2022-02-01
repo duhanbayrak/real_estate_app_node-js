@@ -1,0 +1,62 @@
+<%- include('../partials/head') %>
+    <%- include('../partials/adminPanelDefault') %>
+
+        <style>
+            .container{
+                position: absolute;
+                top: 0;
+                right: 0;
+                display: flex;
+                justify-content: space-around;
+                flex-wrap: wrap;
+            }
+            .card{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                height: 30vh;
+            }
+
+            .card .icon{
+                font-size: 3rem;
+                color: #5C7AEA;
+                margin: 20px;
+                background-color: #B5DEFF;
+                border-radius: 6px;
+                padding: 10px;
+            }
+            .card h3{
+                color: green;
+            }
+
+            @media screen and (max-width: 992px) {
+                .container {
+                    position: relative;
+
+                }
+            }
+        </style>
+    <div class="container col-lg-9 bg-light">
+        <div class="card mt-3" style="width: 18rem;">
+            <i class="fas fa-users icon"></i>
+            <div class="card-body">
+                <h5 class="card-title text-muted">Ziyaretçi Sayısı</h5><hr>
+                <h3 class="text-center mt-3">347</h3>
+            </div>
+        </div>
+        <div class="card mt-3" style="width: 18rem;">
+            <i class="fas fa-home icon"></i>
+            <div class="card-body">
+                <h5 class="card-title text-muted">Emlak Sayısı</h5><hr>
+                <h3 class="text-center mt-3">12</h3>
+            </div>
+        </div>
+        
+
+
+    </div>
+        
+
+
+
+        <%- include('../partials/adminPanelFooter') %>

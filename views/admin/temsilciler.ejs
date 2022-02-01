@@ -1,0 +1,73 @@
+<%- include('../partials/head') %>
+    <%- include('../partials/adminPanelDefault') %>
+
+
+        <style>
+            .container-card {
+                position: absolute;
+                top: 0;
+                right: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-around;
+                flex-wrap: wrap;
+            }
+           
+            .card a {
+                text-decoration: none;
+
+            }
+
+            .card a .icon {
+                color: #334756;
+            }
+
+            .addAgent {
+                position: absolute;
+                top: 50px;
+                right: 10px;
+            }
+        </style>
+
+        <body>
+            <div class="container container-card col-lg-9 bg-light">
+                <% agents.forEach(element=> { %>
+                <div class="card mb-3 mt-5" style="max-width: 640px;">
+                    <div class="row g-0">
+                        
+                        <div class="col-md-6">
+                            <img src="<%= element.agentImage %> "
+                                class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card-body">
+                                    <h5 class="card-title">
+                                        <%= element.firstName + ' ' + element.lastName %>
+                                    </h5>
+                                    <hr>
+                                    <p class="card-text"><%= element.about %> </p>
+                                    <h6><i class="fas fa-phone icon"></i> <a href="#"> Telefon: <strong
+                                                class="text-muted"><%= element.phone %></strong></a></h6>
+                                    <h6> <a href="#"><i class="fas fa-envelope icon"> </i> Mail: <strong
+                                                class="text-muted"><%= element.email %> </strong> </a></h6><br>
+                                    <a href="/editAgent/<%= element._id %> " class="btn btn-info float-end"><i class="fas fa-edit"></i> Düzenle</a>
+                                    
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <% }); %>
+                <a href="/addAgent" class="btn btn-success addAgent"><i class="fas fa-user-plus"></i> Yeni Temsilci Ekle</a>
+
+            </div>
+            
+
+
+
+
+
+
+
+            <%- include('../partials/adminPanelFooter') %>

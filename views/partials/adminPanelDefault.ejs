@@ -1,0 +1,89 @@
+<style>
+  .nav-item a {
+    font-size: 1.5rem;
+    color: #ccc;
+  }
+
+  .nav-item a:hover {
+    background-color: #ccc;
+  }
+
+  .edit {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .panel{
+    height: 100vh;
+  }
+  #navbarResponsive h3{
+    border-bottom: 1px solid #ccc;
+    color: green;
+  }
+  #logout{
+    position: absolute;
+    bottom: 10px;
+    left: 12%;
+  }
+  @media screen and (max-width: 992px) {
+    .panel{
+      width: 100%;
+      height: auto;
+      
+    }
+    .navbar-btn{
+      color: white; 
+    }
+  }
+  
+</style>
+
+<body>
+  <nav class="navbar-expand-lg nav-bar">
+    <div class="panel bg-dark col-lg-3" >
+      <button class="navbar-toggler bg-dark navbar-btn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars ms-1"></i>
+      </button>
+      <div class="collapse navbar-collapse flex-column" id="navbarResponsive">
+        <h3 class="text-center p-3 pt-4"><i class="fas fa-cog" style="color: #ccc;"></i> Admin Panel</h3>
+        <br><br>
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link" href="/ilan-yonetim"><i class="fas fa-home"></i> Emlakları Yönet</a>
+          </li>
+          <br>
+          <li class="nav-item">
+            <a class="nav-link" href="/kullanicilar"><i class="fas fa-users"></i> Kullanıcılar</a>
+          </li>
+          <br>
+          <li class="nav-item">
+            <a class="nav-link" href="/temsilciler"><i class="fas fa-user-cog"></i> Temsilciler</a>
+          </li>
+          <br>
+          <li class="nav-item">
+            <a class="nav-link" href="/ilanEkle"><i class="fas fa-plus"></i></i> Yeni İlan Ekle</a>
+          </li>
+          <br>
+          <li class="nav-item">
+              <a class="nav-link" href="/sayfalar"><i class="fas fa-file"></i> Sayfalar</a>
+          </li>
+          <br>
+          <li class="nav-item">
+            <a class="nav-link" href="/messages"><i class="fas fa-envelope"></i> Mesajlar </span></a>
+          </li>
+          <br><br><br>
+          <li class="nav-item">
+            <a class="nav-link" href="/"><i class="fas fa-long-arrow-alt-left"></i> Anasayfa'ya Dön</a>
+          </li>
+          <li class="nav-item" id="logout">
+            <a class="nav-link btn btn-outline-secondary" href="/logout"><i class="fas fa-sign-out-alt"></i> Çıkış Yap</a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+  </nav>

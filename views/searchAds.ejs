@@ -1,0 +1,65 @@
+<%- include('./partials/head') %>
+<body>
+    <style>
+        .allAds{
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;  
+        }
+        .card{
+            margin: 10px;
+           
+        }
+        .card-img-top{
+            height: 200px;
+        }
+    </style>
+    <%- include('./partials/navbar') %>
+   <hr>
+   <div class="allAds container">
+
+    <% ilan.forEach(e=>{ %>
+    <div class="card" style="width: 18rem">
+      
+
+        
+        <img src="<%= e.image[0] %> " class="card-img-top" alt="...">
+        <div class="card-body">
+            <div class="card-title">
+                <h5 class="float-end" style="color: #548CA8;"><%= e.fiyat %> ₺</h5>
+                <span class="text-muted"><%= e.ilan_baslik%></span>
+            </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">İlan No: <span class="text-muted"><%= e.ilan_no%></span> </li>
+            <li class="list-group-item">İlan Tarihi: <span class="text-muted"><%= e.ilan_tarihi.toLocaleDateString()%></span> </li>
+            <li class="list-group-item">Alan: <span class="text-muted"><%= e.alan_net%>m²</span> </li>
+            <li class="list-group-item">Oda Sayısı: <span class="text-muted"><%= e.oda_sayisi%></span> </li>
+            <li class="list-group-item">Bulunduğu Kat: <span class="text-muted"><%= e.bulundugu_kat%></span> </li>
+            <li class="list-group-item">Konum: <span class="text-muted"><%= e.il%>/<%= e.ilce%></span> </li>
+          </ul>
+          <a href="/adsDetail/<%= e._id %> " class="btn btn-success float-end">İlana Git</a>
+        </div>
+       
+    
+      </div>
+      
+      <% }) %> 
+        
+    </div>
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+<br>
+<%- include('./partials/footer') %>

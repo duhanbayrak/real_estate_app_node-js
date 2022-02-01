@@ -1,0 +1,62 @@
+<%- include('../partials/head') %>
+<%- include('../partials/adminPanelDefault') %>
+<style>
+    .ilan_tablo{
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+    .edit{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    @media screen and (max-width: 992px) {
+      .ilan_tablo{
+      position: relative;
+      
+    }
+    }
+   
+    
+  </style>
+    <div class="col-lg-9 ilan_tablo">
+        <table class="table">
+            <thead class="table-dark">
+              <tr class="text-center">
+                <th scope="col">Tarih</th>
+                <th scope="col">İsim</th>
+                <th scope="col">E-Mail</th>
+                <th scope="col">Telefon</th>
+                <th scope="col">#</th>
+              </tr>
+            </thead>
+            <tbody>
+                <% messages.forEach(e=>{ %>
+              <tr class="text-center">
+                
+                <td class="py-4"><%= e.date.toLocaleDateString()%></td>
+                <td class="py-4"><%= e.name%></td>
+                <td class="py-4"><%= e.email%></td>
+                <td class="py-4"><%= e.phone%></td>
+                
+                <td>
+                    <div class="edit">
+                        <form method="POST" action="/deleteMessage/<%= e._id%>?_method=DELETE">
+                            <button class="btn btn-danger btn-sm mt-2 "><i class="fas fa-trash-alt"></i> SİL</button>
+                        </form>
+                        
+                        <a href="/answerMessage/<%= e._id %>  " class="btn btn-info  btn-sm mt-2"><i class="fas fa-envelope-open"></i> Mesaja Bak</a>
+                        
+                    </div>
+                    
+                </td>
+              </tr>
+             
+              <% }) %>
+            </tbody>
+          </table>
+        
+    </div>
+    
+    <%- include('../partials/adminPanelFooter') %>

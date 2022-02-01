@@ -1,0 +1,109 @@
+<%- include('./partials/head') %> 
+
+<body>
+    <%- include('./partials/navbar') %>  
+    <style>
+        main{
+            font-family: 'Montserrat', sans-serif;
+        }
+        #contact-container{
+            font-family: 'Montserrat', sans-serif;
+        }
+    </style>
+<header class="masthead" style="background-image: url('https://cdn.pixabay.com/photo/2015/01/11/02/15/mailbox-595854_960_720.jpg');background-attachment: fixed;">
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="site-heading">
+                    <h1>İletişim</h1>
+                    <span class="subheading">Bize Mail Atın</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="container px-4" id="contact-container">
+    <div class="row gx-5 text-center">
+      <div class="col">
+       <div class="p-3">
+        <span class="fa-stack fa-2x">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fas fa-map-marker-alt fa-stack-1x fa-inverse"></i>
+        </span>
+        <br><br>
+        <%- contact.address %> 
+            
+            
+       </div>
+      </div>
+      <div class="col">
+        <div class="p-3">
+            <span class="fa-stack fa-2x">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fas fa-phone fa-stack-1x fa-inverse"></i>
+            </span>
+            <br><br>
+            <h5>TELEFON</h5>
+            <h6><%= contact.tel %> </h6>
+        </div>
+      </div>
+      <div class="col">
+        <div class="p-3">
+            <span class="fa-stack fa-2x">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fas fa-envelope-open fa-stack-1x fa-inverse"></i>
+            </span>
+            <br><br>
+            <h5>E-MAİL</h5>
+            <h6><%= contact.mail %> </h6>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br><br>
+<!-- Main Content-->
+<main class="mt-4">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <h4>Bizimle İletişime Geçin</h4>
+                <div class="my-5"> 
+                    <form id="contactForm" method="post" action="/send">
+                        <div class="form-group ">
+                            <label for="name">İsim</label>
+                            <input class="form-control" name="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
+                        </div>
+                        <div class="form-group mt-3">
+                            <label for="email">Email address</label>
+                            <input class="form-control" name="email" type="email" placeholder="Enter your email..." data-sb-validations="required,email" />
+                            
+                           
+                        </div>
+                        <div class="form-group mt-3">
+                            <label for="phone">Telefon Numarası</label>
+                            <input class="form-control" name="phone" type="tel" placeholder="Enter your phone number..."/>
+                          
+                           
+                        </div>
+                        <div class="form-group mt-3">
+                            <label for="message">Mesaj</label>
+                            <textarea class="form-control" name="message" placeholder="Enter your message here..." style="height: 12rem" data-sb-validations="required"></textarea>
+                        </div>
+                        <br />    
+                        <button class="btn btn-outline-success text-uppercase" id="submitButton" type="submit">Gönder</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+
+
+
+
+<%- include('./partials/footer') %> 
+
+
+

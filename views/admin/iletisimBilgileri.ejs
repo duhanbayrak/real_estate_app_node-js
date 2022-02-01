@@ -1,0 +1,94 @@
+<%- include('../partials/head') %>
+    <%- include('../partials/adminPanelDefault') %>
+
+        <style>
+            .container {
+                position: absolute;
+                top: 20px;
+                right: 0;
+            }
+
+            @media screen and (max-width: 992px) {
+                .container {
+                    position: relative;
+                    right: 0;
+                }
+            }
+        </style>
+
+        <div class="container col-lg-9">
+            <form action="/contact" method="post">
+                <div class="row">
+                    <div class="col">
+                        <h2 class="text-center">İletişim Kısmını Düzenle</h2>
+                        <div class="input-group input-group-lg mt-2">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1"><i class="fas fa-home"></i></span>
+                            </div>
+                            <textarea class="form-control" name="address" id="address"
+                                rows="5"><%= contact.address %> </textarea>
+                        </div>
+                        <div class="input-group input-group-sm mt-2">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1"><i class="fas fa-phone"></i></span>
+                            </div>
+                            <input class="form-control" type="tel" id="tel" name="tel" value="<%= contact.tel %> ">
+                        </div>
+                        <div class="input-group input-group-sm mt-2">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1"><i class="fas fa-envelope"></i></span>
+                            </div>
+                            <input class="form-control" type="email" id="mail" name="mail" value="<%= contact.mail %> ">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <h2 class="text-center mt-5">Linkleri Düzenle</h2>
+                        <div class="input-group input-group-sm mt-2">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1"><i class="fab fa-instagram"></i></span>
+                            </div>
+                            <input class="form-control" type="text" id="instagram" name="instagram"
+                                value="<%= contact.instagram %> ">
+                        </div>
+                        <div class="input-group input-group-sm mt-2">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1"><i class="fab fa-twitter"></i></span>
+                            </div>
+                            <input class="form-control" type="text" id="twitter" name="twitter"
+                                value="<%= contact.twitter %> ">
+                        </div>
+                        <div class="input-group input-group-sm mt-2">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1"><i
+                                        class="fab fa-facebook-f"></i></span>
+                            </div>
+                            <input class="form-control" type="text" id="facebook" name="facebook"
+                                value="<%= contact.facebook %> ">
+                        </div>
+                        <div class="input-group input-group-sm mt-2">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1"><i
+                                        class="fab fa-linkedin-in"></i></span>
+                            </div>
+                            <input class="form-control" type="text" id="linkedin" name="linkedin"
+                                value="<%= contact.linkedin %> ">
+                        </div>
+
+                    </div>
+
+                    <button type="submit" id="myButton" class="btn btn-success mt-3"><i class="fas fa-plus"></i>
+                        Ekle</button>
+
+                    <a href="/admin" class="btn btn-secondary mt-3"><i class="fas fa-times"></i> İptal</a>
+
+                </div>
+            </form>
+        </div>
+        
+        <script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
+        <script>
+            CKEDITOR.replace('address');
+
+        </script>
+
+        <%- include('../partials/adminPanelFooter') %>

@@ -1,0 +1,440 @@
+<%- include('./partials/head') %>
+    <style>
+        .img-fluid {
+            width: 400px !important;
+        }
+    </style>
+
+    <body>
+        <%- include('./partials/navbar') %>
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="filter"></div>
+                        <div class="content">
+                            <h1>Sen o evi hayal et, gerisi bizde!</h1>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
+
+                        <img
+                            src="https://images.unsplash.com/photo-1541746972996-4e0b0f43e02a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80" />
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="filter"></div>
+                        <div class="content">
+                            <h1>Lorem ipsum dolor sit amet.</h1>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
+                        <img
+                            src="https://images.unsplash.com/photo-1510627489930-0c1b0bfb6785?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" />
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="filter"></div>
+                        <div class="content">
+                            <h1>Lorem ipsum dolor sit amet.</h1>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
+                        <img
+                            src="https://images.unsplash.com/photo-1464316325666-63beaf639dbb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" />
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="filter"></div>
+                        <div class="content">
+                            <h1>Lorem ipsum dolor sit amet.</h1>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
+                        <img
+                            src="https://images.unsplash.com/photo-1510082460461-62a0f312e2e6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" />
+                    </div>
+                </div>
+                <div class="swiper-button-next next1"></div>
+                <div class="swiper-button-prev prev1"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+            <br>
+            <div class="container px-4 col-lg-10 bg-light" id="search-area">
+                <h2 style="text-align: center; color: tomato;">Detaylı Arama</h2>
+                <hr>
+                <form action="/ilanGetir" method="post">
+                    <div class="row gx-5">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="ilanNo">İlan No</label>
+                                <input type="text" class="form-control" id="ilanNo" placeholder="İlan No" name="ilanNo"
+                                    value="">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="kategori">Emlak Kategorisi</label>
+                                <select class="form-select" aria-label="Default select example" name="kategori">
+                                    <option selected value="">Emlak Kategori</option>
+                                    <option value="Satılık">Satılık</option>
+                                    <option value="Kiralık">Kiralık</option>
+                                    <option value="Arsa">Arsa</option>
+                                </select>
+
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="emlakTuru">Emlak Türü</label>
+                                <select class="form-select" aria-label="Default select example" name="emlakTuru">
+                                    <option selected value="">Emlak Türü</option>
+                                    <option value="Daire">Daire</option>
+                                    <option value="Ofis">Ofis</option>
+                                    <option value="Arsa">Arsa</option>
+                                    <option value="Müstakil">Müstakil</option>
+                                    <option value="İş Yeri">İş Yeri</option>
+                                </select>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row gx-5 mt-3">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="il">İl</label>
+                                <select class="form-select" aria-label="Default select example" name="il">
+                                    <option selected value="">İl</option>
+                                    <option value="İstanbul">İstanbul</option>
+                                    <option value="Ankara">Ankara</option>
+
+                                </select>
+
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="ilce">İlçe</label>
+                                <select class="form-select" aria-label="Default select example" name="ilce">
+                                    <option selected value="">İlçe</option>
+                                    <option value="Avcılar">Avcılar</option>
+                                    <option value="Çankaya">Çankaya</option>
+                                    <option value="Kadıköy">Kadıköy</option>
+                                    <option value="Polatlı">Polatlı</option>
+                                    <option value="Batıkent">Batıkent</option>
+                                    <option value="Beşiktaş">Beşiktaş</option>
+                                </select>
+
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="oda_sayisi">Oda Sayısı</label>
+                                <select class="form-select" aria-label="Default select example" name="oda_sayisi">
+                                    <option selected value="">Oda Sayısı</option>
+                                    <option value="1+0">1+0</option>
+                                    <option value="1+1">1+1</option>
+                                    <option value="2+1">2+1</option>
+                                    <option value="3+1">3+1</option>
+                                    <option value="4+1">4+1</option>
+                                    <option value="5+1">5+1</option>
+                                    <option value="5+2">5+2</option>
+                                </select>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row gx-5 mt-3">
+                        <div class="col">
+                            <button class="btn btn-success btn-lg mt-3 float-end">Emlak Ara</button>
+                        </div>
+                    </div>
+                </form>
+                <br><br>
+            </div>
+
+            <section class="page-section">
+                <div class="container">
+
+                    <div class="row text-center" id="services">
+                        <div class="col-md-4">
+                            <span class="fa-stack fa-4x">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-handshake fa-stack-1x fa-inverse"></i>
+                            </span>
+                            <h4 class="my-3">Güvenilir</h4>
+                            <p class="text-muted">Uzun yılların tecrübesiyle siz müşterilerimize uygun ve sorunsuz
+                                danışmanlıklar veriyoruz.</p>
+                        </div>
+                        <div class="col-md-4">
+                            <span class="fa-stack fa-4x">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-balance-scale-left fa-stack-1x fa-inverse"></i>
+                            </span>
+                            <h4 class="my-3">Uygun Kiralama</h4>
+                            <p class="text-muted">Kira ücretleri konusunda siz müşterilerimize en uygun fiyatları ele
+                                alarak
+                                sunuyoruz.</p>
+                        </div>
+                        <div class="col-md-4">
+                            <span class="fa-stack fa-4x">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-house-user fa-stack-1x fa-inverse"></i>
+                            </span>
+                            <h4 class="my-3">Danışmanlık</h4>
+                            <p class="text-muted">Siz müşterilerimize verdiğimiz danışmanlık süresini her zaman üst
+                                seviye
+                                de tutarak öncesi ve sonrasındaki aşamalarda yardımcı oluyoruz.</p>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            <div id="sale" style="position: absolute;  width: 100%; height: auto; ">
+                <div class="slider-container sale">
+                    <h1>Satılık Daireler</h1>
+                    <hr>
+                    <div class="swiper-container">
+
+                        <div class="swiper-wrapper">
+
+                            <% ilan.forEach(e=>{ %>
+                                <% if(e.durum==="Satılık" ){ %>
+
+
+
+                                    <div class="swiper-slide slide1">
+
+                                        <div class="portfolio-item">
+                                            <a class="portfolio-link" href="/adsDetail/<%= e._id %> ">
+                                                <div class="portfolio-hover">
+                                                    <div class="portfolio-hover-content">
+                                                        <span>Satılık Daire</span>
+                                                        <span>
+                                                            <%= e.alan_net %> m²
+                                                        </span>
+                                                        <span>
+                                                            <%= e.oda_sayisi %>
+                                                        </span>
+                                                    </div>
+                                                </div>
+
+                                                <img src="<%= e.image[0] %> " class="img-fluid" alt="...">
+                                                <div class="fiyat">
+                                                    <h4>
+                                                        <%= e.fiyat %> ₺
+                                                    </h4>
+
+                                                </div>
+                                                <div class="durum">
+                                                    <h6>
+                                                        <%= e.durum %>
+                                                    </h6>
+
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <% } %>
+                                        <% }) %>
+
+
+
+
+
+
+                        </div>
+                        <div class="swiper-pagination"></div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                        <a href="#" class="btn btn-success btn-lg"> Tüm İlanlar <i class="fas fa-chevron-right"></i></a>
+                    </div>
+
+
+
+                </div>
+            </div>
+            <div id="rent" style="position: absolute;  width: 100%; height: auto; margin-top: 500px;">
+
+                <div class="container slider-container rent">
+                    <h1>Kiralık Daireler</h1>
+                    <hr>
+                    <div class="swiper-container2">
+
+                        <div class="swiper-wrapper">
+
+                            <% ilan.forEach(e=>{ %>
+                                <% if(e.durum==="Kiralık" ){ %>
+
+
+
+                                    <div class="swiper-slide slide1">
+
+                                        <div class="portfolio-item">
+                                            <a class="portfolio-link" href="/adsDetail/<%= e._id %> ">
+                                                <div class="portfolio-hover">
+                                                    <div class="portfolio-hover-content">
+                                                        <span>Satılık Daire</span>
+                                                        <span>
+                                                            <%= e.alan_net %> m²
+                                                        </span>
+                                                        <span>
+                                                            <%= e.oda_sayisi %>
+                                                        </span>
+                                                    </div>
+                                                </div>
+
+                                                <img src="./<%= e.image[0] %> " class="img-fluid" alt="...">
+                                                <div class="fiyat">
+                                                    <h4>
+                                                        <%= e.fiyat %> ₺
+                                                    </h4>
+
+                                                </div>
+                                                <div class="durum">
+                                                    <h6>
+                                                        <%= e.durum %>
+                                                    </h6>
+
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <% } %>
+                                        <% }) %>
+
+
+
+
+                        </div>
+                        <div class="swiper-pagination"></div>
+                        <div class="swiper-button-prev prev2"></div>
+                        <div class="swiper-button-next next2"></div>
+                    </div>
+                    <a href="#" class="btn btn-success btn-lg"> Tüm İlanlar <i class="fas fa-chevron-right"></i></a>
+                </div>
+            </div>
+
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+
+            <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+            <script type="module">
+                import Swiper from 'https://unpkg.com/swiper@7/swiper-bundle.esm.browser.min.js'
+                const mainSlider = new Swiper('.mySwiper', {
+
+                    // direction: 'vertical',
+                    loop: true,
+                    slidesPerView: '1',
+                    spaceBetween: 10,
+                    loop: true,
+                    autoplay: {
+                        delay: 10000,
+                        disableOnInteraction: false
+                    },
+                    effect: "fade",
+
+                    pagination: {
+                        el: '.swiper-pagination',
+                        dynamicBullets: true,
+                        clickable: true,
+                    },
+
+                    // // Navigation arrows
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    },
+
+                    // // And if we need scrollbar
+                    // scrollbar: {
+                    //     el: '.swiper-scrollbar',
+                    // },
+                });
+                const swiper = new Swiper('.swiper-container', {
+
+                    // direction: 'vertical',
+                    loop: true,
+                    slidesPerView: 'auto',
+                    spaceBetween: 10,
+                    loop: true,
+                    clickable: true,
+                    // autoplay: {
+                    //     delay: 2500,
+                    //     disableOnInteraction: false
+                    // },
+
+                    pagination: {
+                        el: '.swiper-pagination',
+                        dynamicBullets: true,
+                        clickable: true,
+                    },
+                    breakpoints: {
+                        640: {
+                            slidesPerView: 2,
+                            spaceBetween: 30,
+                        },
+                        768: {
+                            slidesPerView: 4,
+                            spaceBetween: 20,
+                        },
+                        1024: {
+                            slidesPerView: 'auto',
+                            spaceBetween: 10,
+                        },
+                    },
+
+                    // // Navigation arrows
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    },
+
+                    // // And if we need scrollbar
+                    // scrollbar: {
+                    //     el: '.swiper-scrollbar',
+                    // },
+                });
+                const swiper2 = new Swiper('.swiper-container2', {
+
+                    // direction: 'vertical',
+                    loop: true,
+                    slidesPerView: 'auto',
+                    spaceBetween: 10,
+                    loop: true,
+                    // autoplay: {
+                    //     delay: 2500,
+                    //     disableOnInteraction: false
+                    // },
+                    
+
+                    pagination: {
+                        el: '.swiper-pagination',
+                        dynamicBullets: true,
+                        clickable: true,
+                    },
+                    breakpoints: {
+                        640: {
+                            slidesPerView: 2,
+                            spaceBetween: 30,
+                        },
+                        768: {
+                            slidesPerView: 4,
+                            spaceBetween: 10,
+                        },
+                        1024: {
+                            slidesPerView: 'auto',
+                            spaceBetween: 10,
+                        },
+                    },
+
+                    // // Navigation arrows
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    },
+
+                    // // And if we need scrollbar
+                    // scrollbar: {
+                    //     el: '.swiper-scrollbar',
+                    // },
+                });
+            </script>
+
+            <%- include('./partials/footer') %>

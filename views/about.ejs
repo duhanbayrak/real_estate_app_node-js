@@ -1,0 +1,46 @@
+
+ <%- include('./partials/head') %>
+
+<body>
+
+    <%- include('./partials/navbar') %>
+        <header class="masthead"
+            style="background-image: url('https://images.unsplash.com/photo-1516281717304-181e285c6e58?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'); background-attachment: fixed;">
+            <div class="container position-relative px-4 px-lg-5 ">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="site-heading baslik">
+                            <h1 style="color: white;">Hakkımızda</h1>
+                            <hr>
+                            <span style="color: tomato;" class="subheading">Lorem ipsum dolor sit amet.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="about">
+            <div class="container px-4">
+                <div class="row gx-5">
+                    <div class="col-lg-7">
+                        <div class="p-3" style="font-family: 'Montserrat', sans-serif;">
+                            <h1>HAKKIMIZDA</h1>
+                            <br><br>
+                            <%- aboutText.aboutText %> 
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="p-3 " style="margin-top: 100px;">
+                            <img class="img-fluid"
+                                src="https://images.unsplash.com/photo-1585914641050-fa9883c4e21c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
+                                alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+
+<%- include('./partials/footer') %>
+
+

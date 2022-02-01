@@ -1,0 +1,55 @@
+<%- include('./partials/head') %> 
+<style>
+    .container-card{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+   
+    .card a{
+        text-decoration: none;
+        
+
+    }
+    .card a .icon{
+        color: #334756;
+    }
+    
+</style>
+<body>
+    <%- include('./partials/navbar') %>  
+    <hr>
+    <h1 class="mx-5 ">TEMSİLCİLERİMİZ</h1>
+    <div class="container-card">
+        <% agents.forEach(e => { %>
+
+       
+    <div class="card mb-3 mt-5" style="max-width: 640px;">
+        <div class="row g-0">
+          <div class="col-md-6">
+            <img src="<%= e.agentImage %> " class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-6">
+            <div class="card-body">
+              <h5 class="card-title"><%= e.firstName + ' ' + e.lastName %> </h5><hr>
+              <p class="card-text"><%= e.about %> </p>
+              <h6><i class="fas fa-phone icon"></i> <a href="#"> Telefon:   <strong class="text-muted"><%= e.phone %> </strong></a></h6>
+              <h6> <a href="#"><i class="fas fa-envelope icon"> </i> Mail:  <strong class="text-muted"><%= e.email %> </strong> </a></h6>
+             
+            </div>
+          </div>
+        </div>
+      </div>
+      <% }) %> 
+    </div>
+    <br><br><br>  
+
+   
+       
+
+
+
+
+<%- include('./partials/footer') %> 

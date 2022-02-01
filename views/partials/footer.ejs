@@ -1,0 +1,103 @@
+<div class="footer">
+    <footer>
+        <div class="container px-4 mt-3">
+            <div class="row gx-5 footer-row">
+                <div class="col-lg-3" >
+                    <div class="p-3 info">
+                        <div class="address">
+                            <h5><i class="fas fa-home"></i> Adres:</h5>
+                            <%- contact.address %>
+                        </div>
+                        <div class="footer-contact">
+                            <a class=" " href="#!"><i class="fas fa-phone"></i>
+                                <span><%= contact.tel %></span>
+                            </a>
+                            <a class="" href="#!"><i class="fas fa-envelope"></i>
+                                <span><%= contact.mail %></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="p-3 pages">
+                        <h3>Sayfalar</h3>
+                        <ul>
+                            <li><a href="#">Anasayfa</a></li>
+                            <li><a href="#">Tüm İlanlar</a></li>
+                            <li><a href="#">Hakkımızda</a></li>
+                            <li><a href="#">Ekibimiz</a></li>
+                            <li><a href="#">İletişim</a></li>
+
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="p-3 contact-area">
+                        <h2>Bizimle İletişime Geçin</h2>
+                        <form action="/send" method="post">
+                            <div class="form-group mt-3">
+                                <div class="contact-name">
+                                    <i class="fas fa-user"
+                                        style="font-size: 3.4rem; padding: 5px; border-right: 1px solid gray; color: #334756;"></i>
+                                    <input type="text" class="form-control" placeholder="Ad Soyad" name="name"
+                                        style="background: transparent; border: none;">
+                                </div>
+
+                            </div>
+                            <div class="form-group mt-3">
+                                <div class="contact-email">
+                                    <i class="fas fa-envelope"
+                                        style="font-size: 3rem; padding: 5px; border-right: 1px solid gray; color: #334756;"></i>
+                                    <input type="email" class="form-control" placeholder="E-Mail" name="email"
+                                        style="background: transparent; border: none;">
+                                </div>
+
+                            </div>
+                            <div class="form-group mt-3">
+                                <div class="contact-text">
+
+                                    <textarea name="" id="" placeholder="Mesajınız"
+                                        style="background: transparent; border: none; width: 100%;" name="message"></textarea>
+                                </div>
+                            </div>
+                            <button class="btn btn-success mt-3">Mesaj Gönder</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="copyright">
+            <div class="col-lg-4 text-lg-start text-muted">Copyright &copy; Emlak Sitesi 2021</div>
+            <div class=" text-muted">Created By <img
+                    style="width: 100px; height: 100px; border-radius: 100px; padding: 10px;"
+                    src="images/Black and White Deer Logo.png" alt=""> ReinDeer</div>
+
+
+        </div>
+    </footer>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
+integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN"
+crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"
+integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/"
+crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"
+integrity="sha512-HzAEuXwhLxwm/Jj+5ecdjzrRVrjuh2ZeIxyT1Ln37TO5pWNMnKBuU7cfd1wvRQ/k86w1oC174Yk1T7aRlBpIcA=="
+crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"
+integrity="sha512-A98SmLRZISk4eIxQBeCm8k0jAcwN3A3lBx4hr7baoMpV1VpxcxlZIhi5fJIZN50sQ5RlCzx8yV+Voy2cR6x0aA=="
+crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"
+integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ=="
+crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="js/scripts.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+
+</html>

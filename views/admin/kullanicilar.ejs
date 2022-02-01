@@ -1,0 +1,53 @@
+<%- include('../partials/head') %>
+<%- include('../partials/adminPanelDefault') %>
+<style>
+    .ilan_tablo{
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+    @media screen and (max-width: 992px) {
+      .ilan_tablo{
+      position: relative;
+      
+    }
+    }
+   
+    
+  </style>
+    <div class="col-lg-9 ilan_tablo">
+        <table class="table">
+            <thead class="table-dark">
+              <tr class="text-center">
+                <th scope="col">Kullanıcı Adı</th>
+                <th scope="col">Kayıt Tarihi</th>
+                <th scope="col">Düzenle</th>
+              </tr>
+            </thead>
+            <tbody>
+                <% kullanici.forEach(e=>{ %>
+              <tr class="text-center">
+                
+                
+                <td class="py-4"><%= e.username%></td>
+                <td class="py-4"><%= e.date.toLocaleDateString()%></td>
+                <td>
+                    <div class="edit">
+                        <form method="POST" action="/deleteUser/<%= e._id%>?_method=DELETE">
+                            <button class="btn btn-danger  btn-sm"><i class="fas fa-trash-alt"></i> SİL</button>
+                        </form>
+                        
+                        <!-- <a href="/edit/ " class="btn btn-info  btn-sm mb-2"><i class="fas fa-edit"></i> DÜZENLE</a> -->
+                        
+                    </div>
+                    
+                </td>
+              </tr>
+             
+              <% }) %>
+            </tbody>
+          </table>
+        <a href="/signup" class="btn btn-success float-end mx-3"><i class="fas fa-user-plus"></i> Yeni Kullanıcı Ekle</a>
+    </div>
+    
+    <%- include('../partials/adminPanelFooter') %>

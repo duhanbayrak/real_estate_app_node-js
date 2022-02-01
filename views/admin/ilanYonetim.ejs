@@ -1,0 +1,64 @@
+<%- include('../partials/head') %>
+<%- include('../partials/adminPanelDefault') %>
+<style>
+  .ilan_tablo{
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  @media screen and (max-width: 992px) {
+    .ilan_tablo{
+    position: relative;
+    
+  }
+  }
+ 
+  
+</style>
+    <div class="col-lg-9 ilan_tablo">
+        <table class="table">
+            <thead class="table-dark">
+              <tr class="text-center">
+                <th scope="col">İlan No</th>
+                <th scope="col">Tarih</th>
+                <th scope="col">Konum</th>
+                <th scope="col">Oda</th>
+                <th scope="col">Durum</th>
+                <th scope="col">Fiyat</th>
+                <th scope="col">Resim</th>
+                <th scope="col">Düzenle</th>
+              </tr>
+            </thead>
+            <tbody>
+                <% ilan.forEach(e=>{ %>
+              <tr class="text-center">
+                <th scope="row"><%= e.ilan_no%></th>
+                
+                <td class="py-4"><%= e.ilan_tarihi.toLocaleDateString()%></td>
+                <td class="py-4"><%= e.il%>/<%= e.ilce%></td>
+                <td><%= e.oda_sayisi%></td>
+                <td><%= e.durum%></td>
+                <td><%= e.fiyat%> ₺</td>
+                <td><img style="width:100px; height:60px; border-radius:3px;" class="img-fluid" src="<%= e.image[0] %> " alt=""></td>
+                <td>
+                    <div class="edit">
+                        <form method="POST" action="/files/<%= e._id%>?_method=DELETE">
+                            <button class="btn btn-danger  btn-sm mb-2"><i class="fas fa-trash-alt"></i> SİL</button>
+                        </form>
+                        
+                        <a href="/edit/<%= e._id %> " class="btn btn-info  btn-sm mb-2"><i class="fas fa-edit"></i> DÜZENLE</a>
+                        
+                    </div>
+                    
+                </td>
+              </tr>
+             
+              
+
+              <% }) %>
+            </tbody>
+          </table>
+        
+    </div>
+    
+    <%- include('../partials/adminPanelFooter') %>
